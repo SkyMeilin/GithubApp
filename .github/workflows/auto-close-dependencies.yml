@@ -1,15 +1,12 @@
-name: Auto Close Open Source Dependency Updates
-
-# Closes Dependabot dependency updates in github/docs because the internal repo owns them.
-
-on:
-  pull_request:
-    paths:
-      - 'package*.json'
-      - 'Gemfile*'
-      - 'Dockerfile'
-      - '.github/workflows/**'
-      - '.github/actions/**'
+- name: First interaction
+  uses: actions/first-interaction@v1.3.0
+  with:
+    # Token for the repository. Can be passed in using {{ secrets.GITHUB_TOKEN }}
+    repo-token: 
+    # Comment to post on an individual's first issue
+    issue-message: # optional
+    # Comment to post on an individual's first pull request
+    pr-message: # optional
 
 permissions:
   contents: write
